@@ -9,28 +9,159 @@
 		<title>Street Juke</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="main.css" />
+        <meta name="description" content="Street Juke"/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+		<link rel="manifest" href="images/site.webmanifest">
 	</head>
+    
 	<body class="landing">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper" style="background: #2e3842; margin: auto;">
+			<div id="page-wrapper">
 
 				<!-- Header -->
 					<header id="header" class="alt">
-                        <h1 style="top: -12px"><a href="#"><img src="logo.svg" width="50%"></a></h1>
-						
+                        <h1 style="top: -12px"><a href="#"><img src="images/logo.svg" width="50%"></a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu" style="background: #273038;">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="index.html#events">Events</a></li>
+											<li><a href="members.html">Members</a></li>
+                                            <li><a href="shop.html">Merch</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="join.html">Join the Team</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
 					</header>
 
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<img src="logo.svg" width="75%;">
+							<img src="images/logo.svg" width="75%;">
 						</div>
-                        <h2>Coming Soon</h2>
+						<a href="#two" class="more scrolly"></a>
 					</section>
 
+				<!-- One -->
+                <!--
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Upcoming Events</h2>
+							</header>
+						</div>
+					</section>
+                -->
 
+				<!-- Four -->
+					<section id="two" class="wrapper alt style2" style="padding-top: 20px;">
+						<div class="inner">
+                            <center><h2>Featured Merch</h2></center>
+							<ul class="features" style="margin-bottom: 0">
+								<li style="padding: 5px">
+                                    <a href="shop/" style="border-bottom: none"><img src="images/merch1.jpg" width="100%"></a>								
+								</li>
+								<li style="padding: 5px">
+                                    <a href="shop/" style="border-bottom: none"><img src="images/merch2.jpg" width="100%"></a>
+								</li>
+								<h2 style="font-size: 1em; padding-top: 30px;"><a>Coming Soon!</a></h2>
+                                <!--<h2 style="font-size: 1em; padding-top: 30px;"><a href="shop.html">View all merch</a></h2>-->
+							</ul>
+						</div>
+					</section>
+                
+                
+                <!-- Two -->
+					<section id="events" class="wrapper style3 special" style="padding: 0">
+                        <center><h2 style="padding-top: 20px;">Events</h2></center>
+						<section class="spotlight">
+							<div class="image"><img src="images/flyer.jpg" alt="" /></div><div class="content">
+								<h2>Street Juke Brandsmart Show</h2>
+								<p>Join us on Saturday September 11th at 5:00pm for our Brandsmart Show.<br>
+                                    Featuring Music, Photography, Food Trucks, Vendors, and more!</p>
+                                <p><i class="fas fa-map-marker-alt"></i>&nbsp;<a href="https://www.google.com/maps/place/BrandsMart+USA/@26.7182558,-80.0883313,17z/data=!4m13!1m7!3m6!1s0x88d8d6106ea5d627:0xf607b363b23a9f00!2s751+Executive+Center+Dr,+West+Palm+Beach,+FL+33401!3b1!8m2!3d26.7182558!4d-80.0861426!3m4!1s0x88d8d6106fd74e61:0xe2bb480a045a72f0!8m2!3d26.7176472!4d-80.0858078" target="_blank">751 Executive Center Drive, West Palm Beach Fl 33401</a></p>
+							</div>
+						</section>
+                        
+
+				<!-- Three -->
+					<section id="four" class="wrapper alt style2" style="padding-top: 20px; padding-bottom: 3px;">
+						<div class="inner">
+								<h2>Our Members</h2>
+							<ul class="features">
+								<li style="padding: 5px">
+                                    <img src="images/jon.jpg" width="100%">
+								</li>
+								<li style="padding: 5px">
+                                    <img src="images/tommy.jpg" width="100%">								
+								</li>
+								<li style="padding: 5px">
+                                    <img src="images/nadeem.jpg" width="100%">
+								</li>
+								<li style="padding: 5px">
+                                    <img src="images/sean.jpg" width="100%">								
+								</li>
+                                <h2 style="font-size: 1em; padding-top: 30px;"><a href="members.html">View all our members</a></h2>
+							</ul>
+						</div>
+					</section>        
+
+				<!-- Footer -->
+					<footer id="footer" style="padding-top: 20px; padding-bottom: 20px;">
+						<ul class="icons" style="margin: 10px;">
+                            <li><a href="https://instagram.com/streetjuke" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="mailto:streetjuke@hotmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright" style="margin: 0;">
+							<li>&copy; Street Juke 2021</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+                
+            <script>
+                
+              /*  $(function () {
+                    
+                    var body = $('body.landing #page-wrapper');
+                    var backgrounds = [
+                      'url(images/nadeem.jpg)',
+                      'url(images/jon.jpg)',
+                      'url(images/tommy.jpg)'];
+                    var current = 0;
+                    function nextBackground() {
+                        body.css(
+                            'background',
+                        backgrounds[current = ++current % backgrounds.length]);
+
+                        setTimeout(nextBackground, 5000);
+                    }
+                    setTimeout(nextBackground, 5000);
+                    body.css('background', backgrounds[0]);
+                });*/
+
+                
+            </script>
 
 	</body>
 </html>
