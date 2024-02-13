@@ -12,6 +12,4 @@
   <h3 align="center">Street Juke Website</h3>
   <a href="https://streetjuke.com"></a>
   <br>
-    <a href="https://www.browserstack.com/">This project is tested with BrowserStack</a>
-    
 </div>
