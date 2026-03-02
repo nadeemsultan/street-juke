@@ -60,18 +60,18 @@
 						if (isInactive) {
 							// Mapping for Inactive Table
 							row.innerHTML = `
-		                        <td>${member.member_name}</td>
-		                        <td>${member.status || 'Inactive'}</td>
-		                        <td>${formattedDate}</td>
-		                        <td>${member.time_in_crew}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${member.member_name}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${member.status}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${formattedDate}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${member.time_in_crew}</td>
 		                    `;
 						} else {
 							// Mapping for Active Table
 							row.innerHTML = `
-		                        <td><strong>${member.member_name}</strong></td>
-		                        <td>${formattedDate}</td>
-		                        <td>${member.time_in_crew}</td>
-		                        <td>${member.last_active}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;"><strong>${member.member_name}</strong></td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${formattedDate}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${member.time_in_crew}</td>
+		                        <td style="color: white; font-size: smaller; padding: 5px;">${member.last_active}</td>
 		                    `;
 						}
 						tableBody.appendChild(row);
@@ -108,15 +108,15 @@
 							<div class="inner">
 
 								<section>
-									<h4>Active Members</h4>
+									<h4 style="color: white">Active Members</h4>
 									<div class="table-wrapper">
 										<table class="alt">
 											<thead>
 												<tr>
-													<th>Member</th>
-													<th>Joined</th>
-													<th>Time in Crew</th>
-													<th>Last Active</th>
+													<th style="color: white">Member</th>
+													<th style="color: white">Joined</th>
+													<th style="color: white">Time in Crew</th>
+													<th style="color: white">Last Active</th>
 												</tr>
 											</thead>
 											<tbody id="active-members-body">
@@ -131,15 +131,15 @@
 								<hr />
 								
 								<section>
-									<h4>Inactive Members</h4>
+									<h4 style="color: white">Inactive Members</h4>
 									<div class="table-wrapper">
 										<table class="alt">
 											<thead>
 												<tr>
-													<th>Member</th>
-													<th>Status</th>
-													<th>Leave Date</th>
-													<th>Time in Crew</th>
+													<th style="color: white">Member</th>
+													<th style="color: white">Status</th>
+													<th style="color: white">Leave Date</th>
+													<th style="color: white">Time in Crew</th>
 												</tr>
 											</thead>
 											<tbody id="inactive-members-body">
