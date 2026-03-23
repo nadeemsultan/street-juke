@@ -35,31 +35,32 @@
 			gtag('config', 'G-VDQJL7LTZV');
 		</script>
 		<script>
-			async function loadCrew() {
-				try {
-					const response = await fetch('members.json');
-					const data = await response.json();
+			async function loadMembers() {
+					const url = 'https://api.nadeemsultan.com/api/collections/members/records?sort=sort_order';
+					const response = await fetch(url);
+					const { items } = await response.json();
 
-					const render = (list, targetId) => {
+					const render = (roleType, targetId) => {
 						const container = document.getElementById(targetId);
-						container.innerHTML = list.map(person => `
-							<li style="padding: 5px">
-								<img src="images/${person.img}" width="100%" loading="lazy">
-								<i class="fab fa-instagram">&nbsp;</i>
-								<a href="https://instagram.com/${person.name}" target="_blank">${person.name}</a>
-							</li>
-						`).join('');
+						const filtered = items.filter(m => m.role === roleType);
+
+						container.innerHTML = filtered.map(m => {
+							const imgUrl = `https://api.nadeemsultan.com/api/files/members/${m.id}/${m.car_pic}`;
+							return `
+								<li style="padding: 5px">
+									<img src="${imgUrl}" width="100%" loading="lazy">
+									<i class="fab fa-instagram">&nbsp;</i>
+									<a href="https://instagram.com/${m.instagram}" target="_blank">${m.instagram}</a>
+								</li>
+							`;
+						}).join('');
 					};
-
-					render(data.admins, 'admin-list');
-					render(data.members, 'member-list');
-
-				} catch (e) {
-					console.error("Error loading Member:", e);
+					
+					render('admin', 'admin-list');
+					render('member', 'member-list');
 				}
-			}
 
-			loadCrew();
+			loadMembers();
 		</script>
 	</head>
 	<body class="landing">
