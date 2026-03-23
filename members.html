@@ -34,6 +34,33 @@
 
 			gtag('config', 'G-VDQJL7LTZV');
 		</script>
+		<script>
+			async function loadCrew() {
+				try {
+					const response = await fetch('members.json');
+					const data = await response.json();
+
+					const render = (list, targetId) => {
+						const container = document.getElementById(targetId);
+						container.innerHTML = list.map(person => `
+							<li style="padding: 5px">
+								<img src="images/${person.img}" width="100%" loading="lazy">
+								<i class="fab fa-instagram">&nbsp;</i>
+								<a href="https://instagram.com/${person.name}" target="_blank">${person.name}</a>
+							</li>
+						`).join('');
+					};
+
+					render(data.admins, 'admin-list');
+					render(data.members, 'member-list');
+
+				} catch (e) {
+					console.error("Error loading Member:", e);
+				}
+			}
+
+			loadCrew();
+		</script>
 	</head>
 	<body class="landing">
 
@@ -70,98 +97,10 @@
 						</header>
 						<section class="wrapper style5" style="background: #212121; color: white;">
 							<div class="inner">
-
 								<h1 style="text-align: center;">Admins</h1>
-								<ul class="features">
-									<li style="padding: 5px">
-										<img src="images/jon.jpg" width="100%">
-										<i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/gunthrix" target="_blank">gunthrix</a>
-									</li>
-									<li style="padding: 5px">
-										<img src="images/becky.jpg" width="100%">
-										<i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/q50beckz" target="_blank">q50beckz</a>
-									</li>
-									<li style="padding: 5px">
-										<img src="images/nadeem.jpg" width="100%">
-										<i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/nedzded" target="_blank">nedzded</a>  
-									</li>
-									<li style="padding: 5px">
-										<img src="images/tommy.jpg" width="100%">
-										<i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/that_low_alfa" target="_blank">that_low_alfa</a>
-									</li>
-									<li style="padding: 5px">
-										<img src="images/dante.jpg" width="100%">
-										<i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/life_of_dant3" target="_blank">life_of_dant3</a>
-									</li>
-								</ul>
-								
-
+								<ul id="admin-list" class="features"></ul>
 								<h1 style="text-align: center;">Members</h1>
-								<ul class="features">
-									
-								
-								<li style="padding: 5px">
-									<img src="images/sean.jpg" width="100%">
-									<i class="fab fa-instagram">&nbsp;</i><a href="https://www.instagram.com/86goslo/" target="_blank">86goslo</a>
-								</li>
-								<li style="padding: 5px">
-                                    <img src="images/jared.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://www.instagram.com/rosso_s5" target="_blank">rosso_s5</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/jaevon.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/corruption__" target="_blank">corruption__</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/kaleb.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/kalebxblackout" target="_blank">kalebxblackout</a>
-								</li>
-								<li style="padding: 5px">
-                                    <img src="images/glen.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://www.instagram.com/frowzzen/" target="_blank">frowzzen</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/raymond.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/vi_340wagon" target="_blank">vi_340wagon</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/devin.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/projecttdev" target="_blank">projecttdev</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/angel.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/angelrivera244" target="_blank">angelrivera244</a>
-								</li>
-								<!--<li style="padding: 5px">    
-                                    <img src="images/gavin.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/" target="_blank"></a>
-								</li>-->
-								<li style="padding: 5px">    
-                                    <img src="images/jonathan.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/stank_eye_954" target="_blank">stank_eye_954</a>
-								</li>
-								<li style="padding: 5px">    
-                                    <img src="images/willy.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/hondadii" target="_blank">hondadii</a>
-								</li>
-								<li style="padding: 5px">
-                                    <img src="images/joshua.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://www.instagram.com/joshhdrivess/" target="_blank">joshhdrivess</a>
-								</li>
-								<li style="padding: 5px">
-                                    <img src="images/will.png" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://www.instagram.com/bbloodworkk/" target="_blank">bbloodworkk</a>
-								</li>
-								<!--<li style="padding: 5px">    
-                                    <img src="images/yorwuin.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/" target="_blank"></a>
-								</li>-->
-								<li style="padding: 5px">    
-                                    <img src="images/gianni.jpg" width="100%">
-                                    <i class="fab fa-instagram">&nbsp;</i><a href="https://instagram.com/giannicresc" target="_blank">giannicresc</a>
-								</li>
-							</ul>
-
+    							<ul id="member-list" class="features"></ul> </div>
 							</div>
 						</section>
 					</article>
