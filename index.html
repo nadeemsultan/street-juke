@@ -35,6 +35,31 @@
 
 			gtag('config', 'G-VDQJL7LTZV');
 		</script>
+
+		<script>
+			async function loadFeatured() {
+				const url = 'https://api.nadeemsultan.com/api/collections/members/records?sort=sort_order';
+				const response = await fetch(url);
+				const { items } = await response.json();
+				const renderFeatured = (targetId) => {
+					const container = document.getElementById(targetId);
+					const filtered = items.filter(m => m.featured === true);
+					container.innerHTML = filtered.map(m => {
+						const imgUrl = `https://api.nadeemsultan.com/api/files/members/${m.id}/${m.car_pic}`;
+						return `
+				                        <li style="padding: 5px">
+				                            <img src="${imgUrl}" width="100%" loading="lazy">
+				                            <i class="fab fa-instagram">&nbsp;</i>
+				                            <a href="https://instagram.com/${m.instagram}" target="_blank">${m.instagram}</a>
+				                        </li>
+				                    `;
+					}).join('');
+				};
+				renderFeatured('featured-list');
+			}
+
+			loadFeatured();
+		</script>
 	</head>
     
 	<body class="landing">
@@ -65,7 +90,7 @@
 						</nav>
 					</header>
 
-				<!-- Banner -->
+					<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
 							<img src="images/logo.svg" width="75%;">
@@ -78,22 +103,13 @@
 					<!-- Members -->
 					<section id="four" class="wrapper alt style2" style="padding-top: 20px; padding-bottom: 3px;">
 						<div class="inner">
-							<center><h2>Our Members</h2></center>
-							<ul class="features">
-								<li style="padding: 5px">
-									<img src="images/jon.jpg" width="100%">
-								</li>
-								<li style="padding: 5px">
-									<img src="images/nadeem.jpg" width="100%">
-								</li>
-								<li style="padding: 5px">
-									<img src="images/tommy.jpg" width="100%">
-								</li>
-								<li style="padding: 5px">
-									<img src="images/becky.jpg" width="100%">
-								</li>
+							<center>
+								<h2>Our Members</h2>
+							</center>
+							<ul id="featured-list" class="features"></ul>
+							<center>
 								<h2 style="font-size: 1em; padding-top: 30px;"><a href="members.html">View all our members</a></h2>
-							</ul>
+							</center>
 						</div>
 					</section>
 					
