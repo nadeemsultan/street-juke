@@ -37,6 +37,24 @@
 		</script>
 
 		<script>
+			async function loadBanner() {
+				const url = 'https://api.nadeemsultan.com/api/collections/assets/records';
+				const response = await fetch(url);
+					const { items } = await response.json();
+					// Filter for active banners
+					const banner = items.find(item => item.key === 'banner' && item.active === true);
+					if (banner && banner.image) {
+						const bannerContainer = document.getElementById('banner-image-container');
+						const bannerSection = document.getElementById('banner');
+						const imgUrl = `https://api.nadeemsultan.com/api/files/assets/${banner.id}/${banner.image}`;
+						bannerSection.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${imgUrl}')`;
+						bannerSection.style.backgroundSize = 'cover';
+						bannerSection.style.backgroundPosition = 'center center';
+						bannerSection.style.backgroundRepeat = 'no-repeat';
+						bannerContainer.innerHTML = '';
+					}
+			}
+
 			async function loadFeatured() {
 				const url = 'https://api.nadeemsultan.com/api/collections/members/records?sort=sort_order';
 				const response = await fetch(url);
@@ -58,6 +76,7 @@
 				renderFeatured('featured-list');
 			}
 
+			loadBanner();
 			loadFeatured();
 		</script>
 	</head>
@@ -93,7 +112,8 @@
 					<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<img src="images/logo.svg" width="75%;">
+							<img id="banner-logo" src="images/logo.svg" alt="Street Juke" style="display:block;margin:0 auto;width:80%;max-width:1200px;pointer-events:none;">
+							<div id="banner-image-container" aria-hidden="true"></div>
 						</div>
 						<!--<a href="#four" class="more scrolly"></a>-->
 						<h3 style="position: relative; top: 50px; margin-bottom: -5px;">Built to Inspire</h3>
