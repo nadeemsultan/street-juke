@@ -2,4 +2,3 @@ User-agent: googlebot
 Disallow: /Landing/
 Disallow: rules.html
 Disallow: elements.html
-Disallow: stats.html
